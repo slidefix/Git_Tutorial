@@ -1,0 +1,23 @@
+import getpass
+
+def login():
+    correct_username = "Test"
+    correct_password = "TestPW"
+    
+    while True:
+        username = input("Please enter your username: ")
+        if username == correct_username:
+            while True:
+                password = getpass.getpass("Please enter your password: ")
+                if password == correct_password:
+                    print("Logged in successfully as", username)
+                    return
+                else:
+                    print("Password incorrect!")
+                    continue
+        else:
+            print("Username incorrect!")
+            continue
+
+print("Login Script")
+login()
